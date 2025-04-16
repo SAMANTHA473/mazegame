@@ -78,8 +78,8 @@
 
     #messageBox {
       display: none;
-      max-width: 90%;
-      margin: 30px auto;
+      max-width: 80%;
+      margin: 0 auto;
       font-size: 18px;
       line-height: 1.6;
       white-space: pre-wrap;
@@ -88,9 +88,12 @@
       border-radius: 10px;
       background: rgba(0,0,0,0.6);
       animation: glow 1s infinite alternate;
-      position: relative;
-      z-index: 101; /* Ensures it appears above fireworks */
-      backdrop-filter: blur(3px); /* Optional effect to make fireworks visible behind */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 101;
+      backdrop-filter: blur(3px);
     }
 
     @keyframes glow {
@@ -223,8 +226,11 @@
 
       const messageBox = document.getElementById('messageBox');
       messageBox.style.display = 'block'; // Show message box immediately
+      messageBox.style.position = 'absolute'; // Set position to absolute
+      messageBox.style.top = '50%'; // Center vertically
+      messageBox.style.left = '50%'; // Center horizontally
+      messageBox.style.transform = 'translate(-50%, -50%)'; // Adjust position to perfectly center
       messageBox.style.zIndex = 101; // Ensure it appears above fireworks
-      messageBox.style.position = 'relative';
 
       const message = `FOR SHERENADE\n\nHi! Hope this made you smile! 😊
   Wala lang gagawan lang din kita, pasensya na may tropa kang IT HAHAHAH. Dalawa na kayong ginawan ko, ayun thanks sayo and goodluck sa work mo  kahit hindi ko pa sure kung nagsimula ka na, or kung kailan man yun mangyari, alam ko kaya mong pagsabayin lahat. Hindi biro mag-aral at magtrabaho, pero alam ko hindi ka susuko. Ang dami mong ginagawa para sa future mo, at proud na proud ako sa'yo. Ang mga sacrifices mo ngayon, may magandang balang araw na balik ‘yan.
@@ -292,5 +298,7 @@ You deserve all the best surprises in life ✨`;
   </script>
 </body>
 </html>
+
+
 
 
